@@ -27,6 +27,14 @@ let polls = [
 		votesA: 9,
 		votesB: 15,
 	},
+	{
+		id: 2,
+		question: 'Jellof rice or White rice',
+		answerA: 'Jellof',
+		answerB: 'White',
+		votesA: 29,
+		votesB: 8,
+	},
 ];
 
 const handleAdd = (e) => {
@@ -34,6 +42,21 @@ const handleAdd = (e) => {
 	polls = [poll, ...polls];
 	console.log(polls);
 	activeItem = 'Current Polls';
+}
+
+const handleVote = (e) => {
+ const { id, option } = e.detail;
+ let copiedPolls = [...polls];
+ //Find updated poll by id via finding each poll in the array
+ let upvotedPoll = copiedPolls.find((poll) => poll.id == id);
+ //Check which option to update
+ if (option === 'a'){
+	 upvotedPoll.votesA++;
+ }
+ if (option === 'b'){
+	 upvotedPoll.votesB++;
+ }
+ polls = copiedPolls;
 }
 </script>
 
@@ -43,7 +66,7 @@ const handleAdd = (e) => {
 	<h1>Hello {name}!</h1>
 	<Tabs {activeItem} {items} on:tabChange={tabChange} />
 	{#if activeItem === 'Current Polls'}
-	<PollList {polls} />
+	<PollList {polls} on:vote={handleVote} />
 	{:else if activeItem === 'Add New Poll'}
 	<CreatePollForm on:add={handleAdd} />
 	{/if}

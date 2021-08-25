@@ -1,21 +1,33 @@
 <script>
+import { createEventDispatcher } from 'svelte';
 import Card from '../shared/Card.svelte';
 export let poll;
+const dispatch = createEventDispatcher();
 
-//Ractive values for totals
+//Reactive values for totals
 $: totalVotes = poll.votesA + poll.votesB;
+
+//Reactive poll vote moving percentages
+$: percentA = Math.floor(100 / totalVotes * poll.votesA);
+$: percentB = Math.floor(100 / totalVotes * poll.votesB);
+
+//Handling Votes 
+const handleVote = (option, id) => {
+//  dispatch('vote', { option: option, id: id }) //Same below just short-hand version
+dispatch('vote', {option, id});
+};
 
 </script>
 <Card>
     <div class="poll">
     <h3>{ poll.question }</h3>
     <p>Total votes: { totalVotes }</p>
-    <div class="answer">
-        <div class="percent percent-a"></div>
+    <div class="answer" on:click={() => handleVote('a', poll.id)}>
+        <div class="percent percent-a" style="width: {percentA}%"></div>
         <span>{ poll.answerA } ({ poll.votesA })</span>
     </div>
-    <div class="answer">
-        <div class="percent percent-b"></div>
+    <div class="answer" on:click={() => handleVote('b', poll.id)}>
+        <div class="percent percent-b" style="width: {percentB}%"></div>
         <span>{ poll.answerB } ({ poll.votesB })</span>
     </div>
     </div>
@@ -27,13 +39,13 @@ $: totalVotes = poll.votesA + poll.votesB;
  }
 
  p {
-     margin-top: 6px;
-     font-size: 16px;
+     margin-top: 8px;
+     font-size: 18px;
      color: #aaa;
      margin-bottom: 30px;
  }
  .answer {
-     background: rgb(190, 130, 247);
+     background: rgba(245, 187, 245, 0.1);
      cursor: pointer;
      margin: 10px auto;
      position: relative;
@@ -45,5 +57,17 @@ $: totalVotes = poll.votesA + poll.votesB;
      display: inline-block;
      padding: 10px 20px;
  }
-
+ .percent {
+     height: 100%;
+     position: absolute;
+     box-sizing: border-box;
+ }
+ .percent-a {
+     border-left: 4px solid #d91b42;
+     background: rgba(195, 27, 217, 0.3);
+ }
+ .percent-b {
+     border-left: 4px solid #45c496;
+     background: rgba(99, 248, 193, 0.3);
+ }
 </style>
