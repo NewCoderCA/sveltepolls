@@ -649,10 +649,12 @@ var app = (function () {
     			if (default_slot) default_slot.c();
     			t0 = space();
     			p = element("p");
-    			p.textContent = "Passing whatever data through the slot to the component via the button as content";
-    			attr_dev(p, "class", "svelte-1srufex");
-    			add_location(p, file$3, 9, 4, 147);
-    			attr_dev(button, "class", button_class_value = "" + (null_to_empty(/*type*/ ctx[0]) + " svelte-1srufex"));
+    			p.textContent = "Passing whatever data through the slot to the component via this button as content";
+    			attr_dev(p, "class", "svelte-1g218hb");
+    			add_location(p, file$3, 9, 4, 189);
+    			attr_dev(button, "class", button_class_value = "" + (null_to_empty(/*type*/ ctx[0]) + " svelte-1g218hb"));
+    			toggle_class(button, "flat", /*flat*/ ctx[1]);
+    			toggle_class(button, "inverse", /*inverse*/ ctx[2]);
     			add_location(button, file$3, 7, 0, 103);
     		},
     		l: function claim(nodes) {
@@ -685,8 +687,16 @@ var app = (function () {
     				}
     			}
 
-    			if (!current || dirty & /*type*/ 1 && button_class_value !== (button_class_value = "" + (null_to_empty(/*type*/ ctx[0]) + " svelte-1srufex"))) {
+    			if (!current || dirty & /*type*/ 1 && button_class_value !== (button_class_value = "" + (null_to_empty(/*type*/ ctx[0]) + " svelte-1g218hb"))) {
     				attr_dev(button, "class", button_class_value);
+    			}
+
+    			if (dirty & /*type, flat*/ 3) {
+    				toggle_class(button, "flat", /*flat*/ ctx[1]);
+    			}
+
+    			if (dirty & /*type, inverse*/ 5) {
+    				toggle_class(button, "inverse", /*inverse*/ ctx[2]);
     			}
     		},
     		i: function intro(local) {
@@ -792,7 +802,7 @@ var app = (function () {
     const { console: console_1 } = globals;
     const file$2 = "src/components/CreatePollForm.svelte";
 
-    // (24:4) <Button>
+    // (24:4) <Button type="secondary" flat={true}>
     function create_default_slot(ctx) {
     	let t;
 
@@ -812,7 +822,7 @@ var app = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(24:4) <Button>",
+    		source: "(24:4) <Button type=\\\"secondary\\\" flat={true}>",
     		ctx
     	});
 
@@ -843,6 +853,8 @@ var app = (function () {
 
     	button = new Button({
     			props: {
+    				type: "secondary",
+    				flat: true,
     				$$slots: { default: [create_default_slot] },
     				$$scope: { ctx }
     			},
