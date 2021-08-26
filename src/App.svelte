@@ -14,32 +14,14 @@ let items = ['Current Polls', 'Add New Poll'];
 let activeItem = 'Current Polls';
 
 const tabChange = (e) => {
- activeItem = e.detail; //e.detail is the item we send along in the li
+ activeItem = e.detail;           //e.detail is the item we send along in the <li tag>
 }
 
 //Polls now in writeable PollStore file
-
-const handleAdd = (e) => {
-	const poll = e.detail;
-	polls = [poll, ...polls];
-	console.log(polls);
-	activeItem = 'Current Polls';
+const handleAdd = (e) => {   
+	activeItem = 'Current Polls';  //Only need to add active data to the Store
 }
 
-const handleVote = (e) => {
- const { id, option } = e.detail;
- let copiedPolls = [...polls];
- //Find updated poll by id via finding each poll in the array
- let upvotedPoll = copiedPolls.find((poll) => poll.id == id);
- //Check which option to update
- if (option === 'a'){
-	 upvotedPoll.votesA++;
- }
- if (option === 'b'){
-	 upvotedPoll.votesB++;
- }
- polls = copiedPolls;
-}
 </script>
 
 
@@ -48,7 +30,7 @@ const handleVote = (e) => {
 	<h1>Hello {name}!</h1>
 	<Tabs {activeItem} {items} on:tabChange={tabChange} />
 	{#if activeItem === 'Current Polls'}
-	<PollList on:vote={handleVote} />
+	<PollList />
 	{:else if activeItem === 'Add New Poll'}
 	<CreatePollForm on:add={handleAdd} />
 	{/if}
@@ -60,13 +42,6 @@ const handleVote = (e) => {
 
 
 <style>
-	/* main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	} */
-
 	main {
 		max-width: 960px;
 		margin: 30px auto;

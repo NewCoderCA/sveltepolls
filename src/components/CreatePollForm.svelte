@@ -1,4 +1,5 @@
 <script>
+import PollStore from '../stores/PollStore.js';
 import { createEventDispatcher } from 'svelte';
 import Button from '../shared/Button.svelte';
 
@@ -10,9 +11,9 @@ let valid = false;
 const submmitHandler = () => {
   valid = true;
   //form is true at beginning if any answers fail form is false
-  if (fields.question.trim().length < 5) {
+  if (fields.question.trim().length < 2) {
     valid = false;
-    errors.question = 'Question must be at least 5 characters long';
+    errors.question = 'Question must be at least 2 characters long';
   } else {
     errors.question = '';
 } 
@@ -33,7 +34,11 @@ if (fields.answerB.trim().length < 1) {
 //Add New Poll if Valid is True
 if (valid) {
     let poll = {...fields, votesA: 0, votesB: 0, id: Math.random()};
-    dispatch('add', poll);
+    //Line below saves poll direct to store using callback function update
+    PollStore.update(currentPolls => {
+        return [poll, ...currentPolls];      //Return new poll and copy of all currentPolls
+    })
+    dispatch('add');
 }
 
 }
