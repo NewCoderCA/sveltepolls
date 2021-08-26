@@ -17,25 +17,7 @@ const tabChange = (e) => {
  activeItem = e.detail; //e.detail is the item we send along in the li
 }
 
-//Polls
-let polls = [
-	{
-		id: 1,
-		question: 'Mountain or River',
-		answerA: 'Mountain',
-		answerB: 'River',
-		votesA: 9,
-		votesB: 15,
-	},
-	{
-		id: 2,
-		question: 'Jellof rice or White rice',
-		answerA: 'Jellof',
-		answerB: 'White',
-		votesA: 29,
-		votesB: 8,
-	},
-];
+//Polls now in writeable PollStore file
 
 const handleAdd = (e) => {
 	const poll = e.detail;
@@ -66,7 +48,7 @@ const handleVote = (e) => {
 	<h1>Hello {name}!</h1>
 	<Tabs {activeItem} {items} on:tabChange={tabChange} />
 	{#if activeItem === 'Current Polls'}
-	<PollList {polls} on:vote={handleVote} />
+	<PollList on:vote={handleVote} />
 	{:else if activeItem === 'Add New Poll'}
 	<CreatePollForm on:add={handleAdd} />
 	{/if}
