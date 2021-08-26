@@ -1,6 +1,8 @@
 <script>
 import Card from '../shared/Card.svelte';
 import PollStore from '../stores/PollStore.js';
+import Button from '../shared/Button.svelte';
+import { tweened } from 'svelte/motion';
 
 export let poll;
 
@@ -9,8 +11,16 @@ export let poll;
 $: totalVotes = poll.votesA + poll.votesB;
 
 //Reactive poll vote moving percentages
-$: percentA = Math.floor(100 / totalVotes * poll.votesA);
-$: percentB = Math.floor(100 / totalVotes * poll.votesB);
+$: percentA = Math.floor(100 / totalVotes * poll.votesA) || 0;
+$: percentB = Math.floor(100 / totalVotes * poll.votesB) || 0;
+
+//Tween-change over time the percentage value on poll bar
+const tweenA = tweened(0);
+const tweenB = tweened(0);
+
+//Reactive value of poll bar will run when percentA changes 
+$: tweenA.set(percentA);
+$: tweenB.set(percentB);
 
 //Handling Votes 
 const handleVote = (option, id) => {
@@ -30,7 +40,12 @@ const handleVote = (option, id) => {
   });
  };
 
-
+//Deleting Poll
+const handleDelete = (id) => {
+  PollStore.update(currentPolls => {
+    return currentPolls.filter(poll => poll.id != id)  //Returns filtered array minus correct id
+  });
+};
 </script>
 
 
@@ -40,12 +55,17 @@ const handleVote = (option, id) => {
     <h3>{ poll.question }</h3>
     <p>Total votes: { totalVotes }</p>
     <div class="answer" on:click={() => handleVote('a', poll.id)}>
-        <div class="percent percent-a" style="width: {percentA}%"></div>
+        <div class="percent percent-a" style="width: {$tweenA}%"></div>
         <span>{ poll.answerA } ({ poll.votesA })</span>
     </div>
     <div class="answer" on:click={() => handleVote('b', poll.id)}>
-        <div class="percent percent-b" style="width: {percentB}%"></div>
+        <div class="percent percent-b" style="width: {$tweenB}%"></div>
+        <!--Inserting tweened value to animate poll percentage bar-->
         <span>{ poll.answerB } ({ poll.votesB })</span>
+    </div>
+    <div class="delete">
+        <Button flat={true} on:click={() => handleDelete(poll.id)}>Delete</Button>
+        <!-- Inserting inline onClick function to handle the delete button -->
     </div>
     </div>
 </Card>
@@ -89,5 +109,9 @@ const handleVote = (option, id) => {
  .percent-b {
      border-left: 4px solid #45c496;
      background: rgba(99, 248, 193, 0.3);
+ }
+ .delete {
+     margin-top: 30px;
+     text-align: center;
  }
 </style>

@@ -10,7 +10,7 @@ let valid = false;
 
 const submmitHandler = () => {
   valid = true;
-  //form is true at beginning if any answers fail form is false
+  //Form is true at beginning if any answers fail form is false
   if (fields.question.trim().length < 2) {
     valid = false;
     errors.question = 'Question must be at least 2 characters long';
@@ -34,7 +34,7 @@ if (fields.answerB.trim().length < 1) {
 //Add New Poll if Valid is True
 if (valid) {
     let poll = {...fields, votesA: 0, votesB: 0, id: Math.random()};
-    //Line below saves poll direct to store using callback function update
+    //Line below saves poll direct to Store using callback function update
     PollStore.update(currentPolls => {
         return [poll, ...currentPolls];      //Return new poll and copy of all currentPolls
     })

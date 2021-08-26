@@ -22,8 +22,12 @@ const handleAdd = (e) => {
 	activeItem = 'Current Polls';  //Only need to add active data to the Store
 }
 
+//
+import { tweened } from 'svelte/motion';
+const value = tweened(0);
 </script>
 
+<button on:click={() => value.set(1)}>{$value}</button>
 
 <Header />
 <main>

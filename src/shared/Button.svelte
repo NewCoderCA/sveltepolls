@@ -5,7 +5,7 @@ export let inverse = false;
 
 </script>
 
-<button class={type} class:flat={flat} class:inverse={inverse}>
+<button class={type} class:flat={flat} class:inverse={inverse} on:click>
     <slot></slot>
     <p>Passing any data as content through the slot to the component via this button</p>
 </button>
@@ -16,7 +16,7 @@ export let inverse = false;
 
 p {
     font-size: 8px;
-    color: grey;
+    color:black;
 }
 
 button {
@@ -27,9 +27,10 @@ button {
     font-weight: bold;
     font-size: 16px;
     box-shadow:  1px 2px 3px rgba(0,0,0,0.2);
+    max-width: 200px;
 }
 .primary {
-    background: blueviolet;
+    background: rgba(248, 64, 64, 0.8);
     color: white;
 }
 .secondary {
