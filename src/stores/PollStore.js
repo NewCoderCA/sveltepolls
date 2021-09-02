@@ -11,6 +11,14 @@ const PollStore = writable([
 	},
     {
 		id: 2,
+		question: 'Nollywood or Holloywood movies',
+		answerA: 'Nollywood',
+		answerB: 'Hollywood',
+		votesA: 58,
+		votesB: 42,
+	},
+	{
+		id: 3,
 		question: 'Jellof rice or Rice and peas',
 		answerA: 'Jellof',
 		answerB: 'Rice and peas',

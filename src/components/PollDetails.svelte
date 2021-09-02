@@ -52,8 +52,8 @@ const handleDelete = (id) => {
 
 <Card>
     <div class="poll">
-    <h3>{ poll.question }</h3>
-    <p>Total votes: { totalVotes }</p>
+    <h2>{ poll.question }</h2>
+    <h3>Total votes: { totalVotes }</h3>
     <div class="answer" on:click={() => handleVote('a', poll.id)}>
         <div class="percent percent-a" style="width: {$tweenA}%"></div>
         <span>{ poll.answerA } ({ poll.votesA })</span>
@@ -73,15 +73,15 @@ const handleDelete = (id) => {
 
 
 <style>
- h3 {
+ h2 {
      margin: 0 auto;
-     color: #555;
+     color: black;
  }
 
- p {
+ h3 {
      margin-top: 8px;
      font-size: 18px;
-     color: #aaa;
+     color: black;
      margin-bottom: 30px;
  }
  .answer {

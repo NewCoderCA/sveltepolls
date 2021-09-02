@@ -22,16 +22,27 @@ const handleAdd = (e) => {
 	activeItem = 'Current Polls';  //Only need to add active data to the Store
 }
 
-//
-import { tweened } from 'svelte/motion';
-const value = tweened(0);
-</script>
+let firstName = '';
+let lastName = '';
+$: username = `${firstName} ${lastName}`;
+const handleClick = () => {
+	username = '';
+}
 
-<button on:click={() => value.set(1)}>{$value}</button>
+const handleInput = (e) => {
+  username = e.target.value
+};
+</script>
 
 <Header />
 <main>
-	<h1>Hello {name}!</h1>
+	<h1>Hello {username} welcome to {name}!</h1>
+	<button on:click={handleClick}>Insert your name</button>
+	<!--<input type="text" on:input={handleInput} value={username}>-->
+    <!--Alternative way for two-way-binding reactive name values below-->
+    <input type="text" bind:value={firstName}>
+	<input type="text" bind:value={lastName}>
+
 	<Tabs {activeItem} {items} on:tabChange={tabChange} />
 	{#if activeItem === 'Current Polls'}
 	<PollList />
@@ -62,5 +73,14 @@ const value = tweened(0);
 		main {
 			max-width: none;
 		}
+	}
+
+	button {
+	   background: rgba(195, 27, 217, 0.1);
+	   padding: 30px auto;
+	   border-radius: 6px;
+	}
+	input[type="text"] {
+		border-radius: 6px;
 	}
 </style>

@@ -15,7 +15,7 @@ export let inverse = false;
 <style>
 
 p {
-    font-size: 8px;
+    font-size: 8.5px;
     color:black;
 }
 
@@ -30,7 +30,7 @@ button {
     max-width: 200px;
 }
 .primary {
-    background: rgba(248, 64, 64, 0.8);
+    background: rgba(247, 16, 16, 0.8);
     color: white;
 }
 .secondary {

@@ -1,9 +1,9 @@
 <script></script>
 
 <header>
- <h1>
+ <p>
     <img src="./images/map.jpg" alt="Poll African continent map logo" class="map" >
- </h1>
+ </p>
 </header>
 
 
@@ -13,7 +13,7 @@
      padding: 20px;
  }
 
- h1 {
+ p {
      margin: 0;
      text-align: center;
  }
