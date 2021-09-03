@@ -43,8 +43,9 @@ const handleInput = (e) => {
 	<div on:change={handleChange}>Insert your full name</div>
 	<!--<input type="text" on:input={handleInput} value={username}>-->
     <!--Alternative way for two-way-binding reactive name values below-->
-    <input type="text" bind:value={firstName}>
-	<input type="text" bind:value={lastName}>
+    <!-- <input type="text" bind:value={firstName}>
+	<input type="text" bind:value={lastName}> -->
+	<input type="text" bind:value={username}>
 
     <AfricanCountry />
 	<Tabs {activeItem} {items} on:tabChange={tabChange} />

@@ -92,12 +92,12 @@ function submitForm() {
 </div>
 
 <div>
-    <label for="relocation">Relocation countries 5 maximum</label>
+    <label for="relocation">Desired relocation countries</label>
     <textarea id="relocation" bind:value={formValues.relocationSummary} />
 </div>
 
 <div>
-    <label for="mulitRegion">Relocation region 3 maximum</label>
+    <label for="mulitRegion">Relocation region</label>
     <select id="mulitRegion" bind:value={formValues.multiRegion} multiple>
         <option value="">Select a relocation region</option>
         <option value="north africa">North Africa</option>
@@ -119,7 +119,7 @@ function submitForm() {
 </div>
 
 <div>
-    <button>Submit</button>
+    <button id="button">Submit</button>
 </div>
 </form>
 
@@ -146,14 +146,12 @@ input[type="radio"] + label {
 input[type="radio"]{
     transform: scale(2);
 }
-button {
+#button {
     border-radius: 6px;
     border-color: blueviolet;
     padding: 10px;
 }
-button:hover{
-    background-color: #45c496;
-
-   
+#button:hover{
+    background-color: #45c496;  
 }
 </style>
