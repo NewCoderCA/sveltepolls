@@ -3,6 +3,7 @@ export let name;
 //Components
 import Header from './components/Header.svelte';
 import AfricanCountry from './components/AfricanCountry.svelte';
+import Flag from './components/Flag.svelte';
 import Footer from './components/Footer.svelte';
 import PollList from './components/PollList.svelte';
 import CreatePollForm from './components/CreatePollForm.svelte';
@@ -53,6 +54,8 @@ const handleInput = (e) => {
 	<CreatePollForm on:add={handleAdd} />
 	{/if}
 
+	<Flag />
+	<p>Thank you {username} for taking part!</p>
 </main>
 <Footer />
 

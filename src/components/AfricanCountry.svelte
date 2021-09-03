@@ -1,4 +1,18 @@
 <script>
+
+//Users name will appear in title
+let firstName = '';
+let lastName = '';
+$: username = `${firstName} ${lastName}`;
+const handleChange = () => {
+	username = '';
+}
+
+const handleInput = (e) => {
+  username = e.target.value
+};
+
+//User form
 const formValues = {
     country: '',
     relocationSummary: '',
@@ -6,12 +20,19 @@ const formValues = {
     numberofPolls: []
 }
 
+//Submitting User form information. Usually would be sent to an API Endpoint
+function submitForm() {
+  console.log(formValues);
+
+}
 </script>
 
 
-<form>
+
+
+<form on:submit|preventDefault={submitForm}>
 <div>
-    <label for="country">Choose your African Country</label>
+    <label for="country">Choose your residential African Country</label>
     <select id="country" bind:value={formValues.country}>
         <option value="">Select a country</option>
         <option value="algeria">Algeria</option>
@@ -88,16 +109,19 @@ const formValues = {
 </div>
 
 <div>
-    <label>Number of Polls taken</label>
+    <label>Number of Polls taken before</label>
     <input type="radio" id="0-2" value="0-2" bind:group={formValues.numberofPolls} />
-    <label for="0-2">0-2 times</label>
+    <label for="0-2">0-2 polls</label>
     <input type="radio" id="3-5" value="3-5" bind:group={formValues.numberofPolls} />
-    <label for="3-5">3-5 times</label>
+    <label for="3-5">3-5 polls</label>
     <input type="radio" id="5+" value="5+" bind:group={formValues.numberofPolls} />
-    <label for="5+">5+</label>
+    <label for="5+">5+ polls</label>
+</div>
+
+<div>
+    <button>Submit</button>
 </div>
 </form>
-
 
 <style>
 
@@ -105,7 +129,7 @@ form {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
-  padding:20px;
+  padding:10px auto;
 } 
 label{
     margin: 20px auto;
@@ -121,5 +145,15 @@ input[type="radio"] + label {
 }
 input[type="radio"]{
     transform: scale(2);
+}
+button {
+    border-radius: 6px;
+    border-color: blueviolet;
+    padding: 10px;
+}
+button:hover{
+    background-color: #45c496;
+
+   
 }
 </style>
