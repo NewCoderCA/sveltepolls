@@ -2,6 +2,7 @@
 export let name;
 //Components
 import Header from './components/Header.svelte';
+import AfricanCountry from './components/AfricanCountry.svelte';
 import Footer from './components/Footer.svelte';
 import PollList from './components/PollList.svelte';
 import CreatePollForm from './components/CreatePollForm.svelte';
@@ -22,10 +23,11 @@ const handleAdd = (e) => {
 	activeItem = 'Current Polls';  //Only need to add active data to the Store
 }
 
+//Users name will appear in title
 let firstName = '';
 let lastName = '';
 $: username = `${firstName} ${lastName}`;
-const handleClick = () => {
+const handleChange = () => {
 	username = '';
 }
 
@@ -36,13 +38,14 @@ const handleInput = (e) => {
 
 <Header />
 <main>
-	<h1>Hello {username} welcome to {name}!</h1>
-	<button on:click={handleClick}>Insert your name</button>
+	<h1>Hello {username} welcome to {name} Polls!</h1>
+	<div on:change={handleChange}>Insert your full name</div>
 	<!--<input type="text" on:input={handleInput} value={username}>-->
     <!--Alternative way for two-way-binding reactive name values below-->
     <input type="text" bind:value={firstName}>
 	<input type="text" bind:value={lastName}>
 
+    <AfricanCountry />
 	<Tabs {activeItem} {items} on:tabChange={tabChange} />
 	{#if activeItem === 'Current Polls'}
 	<PollList />
@@ -60,6 +63,7 @@ const handleInput = (e) => {
 	main {
 		max-width: 960px;
 		margin: 30px auto;
+		text-align: center;
 	}
 	h1 {
 		color: rgb(204, 2, 245);
@@ -76,11 +80,12 @@ const handleInput = (e) => {
 	}
 
 	button {
-	   background: rgba(195, 27, 217, 0.1);
-	   padding: 30px auto;
+	   background: rgba(185, 92, 197, 0.1);
+	   padding: 35px auto;
 	   border-radius: 6px;
 	}
 	input[type="text"] {
 		border-radius: 6px;
+		margin: 20px auto;
 	}
 </style>
