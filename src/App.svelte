@@ -8,7 +8,7 @@ import Footer from './components/Footer.svelte';
 import PollList from './components/PollList.svelte';
 import CreatePollForm from './components/CreatePollForm.svelte';
 import Tabs from './shared/Tabs.svelte';
-
+import Countdown from './components/Countdown.svelte'
 
 
 //Tabs 
@@ -56,6 +56,8 @@ const handleInput = (e) => {
 	{/if}
 
 	<Flag />
+	<Countdown />
+
 	<p>Thank you {username} for taking part!</p>
 </main>
 <Footer />
