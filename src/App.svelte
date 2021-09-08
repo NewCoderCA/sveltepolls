@@ -9,6 +9,7 @@ import PollList from './components/PollList.svelte';
 import CreatePollForm from './components/CreatePollForm.svelte';
 import Tabs from './shared/Tabs.svelte';
 import Countdown from './components/Countdown.svelte'
+import Timer from './components/Timer.svelte';
 
 
 //Tabs 
@@ -40,6 +41,7 @@ const handleInput = (e) => {
 <Header />
 <main>
 	<h1>Hello {username} welcome to {name} Polls!</h1>
+	<Timer />
 	<div on:change={handleChange}>Insert your full name</div>
 	<!--<input type="text" on:input={handleInput} value={username}>-->
     <!--Alternative way for two-way-binding reactive name values below-->
