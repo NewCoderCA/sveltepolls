@@ -20,7 +20,7 @@ function submitFlag() {
   <h2>Which country has this flag?</h2>
 
   <div class="timer">
-    <p>Start</p>
+    <h3>Start</h3>
     <Countdown countdown={9} on:completed="{() => done = true}" />
     {#if done}
     <p in:fly>Times up!</p>
@@ -29,36 +29,32 @@ function submitFlag() {
 
   <img src="./images/flagGhana.jpg" alt="Flag of Ghana" class="flag" >
 
-  <div>
-    <label for="whichflag">Country of flag</label>
-    <input id="whichflag" bind:value={formValues.flagName}/>
+  <div class="flag-country-label">
+    <label for="flag-country">Country of flag</label>
+    <input id="flag-country" bind:value={formValues.flagName}/>
     <button id="button">Submit</button>
   </div>
-
+  
 </div> 
 </form>
 
 
 
 <style>
-h2 {
-    margin: 0;
-    padding: 0;
-  }
 .card {
     background: white;
     padding: 25px;
+    margin: 100px;
     border-radius: 6px;
     box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    gap: 20px;     
+    width:auto;  
+    justify-content: center;
+    align-items: center;
     }
 .flag {
     width: 200px;
     height: 150px;
-    justify-content: center;
-    align-items: center;
+    margin: 25px;
 }
 #button {
     border-radius: 6px;
@@ -68,14 +64,11 @@ h2 {
 #button:hover{
     background-color: #45c496;  
 }
-#whichflag {
+#flag-country {
     border-radius: 6px;
     border-color: blueviolet;
     padding: 10px;
-    margin: 10px;
+    margin: 15px; 
 }
-.timer {
-  margin: 0;
-  padding:0;
-}
-  </style>
+
+</style>

@@ -61,6 +61,25 @@ const handleInput = (e) => {
 	<Countdown />
 
 	<p>Thank you {username} for taking part!</p>
+	<p>Please share</p>
+	<!-- Share via Social Media -->
+    <a href="https://www.facebook.com/sharer/sharer.php?u=example.org" target="_blank" id="facebook-url">
+    	<img src="./images/facebook.jpg" alt="Facebook logo" id="facebook" />
+    </a>
+	<a href="http://twitter.com/share?url=http://www.example.com&text=Simple Share Buttons&hashtags=simplesharebuttons" target="_blank">
+		<img src="./images/twitter.png" alt="Twitter logo" id="twitter" />
+	</a>
+	<a href="https://www.linkedin.com/sharing/share-offsite/?url=https://example.com" target="_blank">
+		<img src="./images/linkedin.jpeg" alt="LinkedIn logo" id="linkedin" />
+	</a>
+	<a href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());">
+		<img src="./images/pinterest.png" alt="Pinterest logo" id="pinterest" />
+	</a>
+    <a href="mailto:?Subject=Simple Share Buttons&Body=I%20saw%20this%20and%20thought%20of%20you!%20 http://www.example.com">
+		<img src="./images/email.png" alt="Email logo" id="email" />
+	</a>
+
+   
 </main>
 <Footer />
 
@@ -68,32 +87,63 @@ const handleInput = (e) => {
 
 
 <style>
+main {
+	max-width: 960px;
+	margin: 30px auto;
+	text-align: center;
+}
+h1 {
+	color: rgb(204, 2, 245);
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 4em;
+	font-weight: 100;
+}
+
+@media (min-width: 640px) {
 	main {
-		max-width: 960px;
-		margin: 30px auto;
-		text-align: center;
+		max-width: none;
 	}
-	h1 {
-		color: rgb(204, 2, 245);
-		text-transform: uppercase;
-		text-align: center;
-		font-size: 4em;
-		font-weight: 100;
-	}
+}
 
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
+button {
+	background: rgba(185, 92, 197, 0.1);
+	padding: 35px auto;
+	border-radius: 6px;
+}
 
-	button {
-	   background: rgba(185, 92, 197, 0.1);
-	   padding: 35px auto;
-	   border-radius: 6px;
-	}
-	input[type="text"] {
-		border-radius: 6px;
-		margin: 20px auto;
-	}
+input[type="text"] {
+	border-radius: 6px;
+	margin: 20px auto;
+}
+
+#facebook, #twitter, #linkedin, #pinterest, #email {
+	max-width: 50px;
+	max-height: 50px;
+	border-radius: 10px;
+	margin:10px;
+	border: 1px solid rgb(190, 188, 188);
+}
+	
+#facebook:hover, #facebook:focus {
+	background: #e1e1e1;
+    border: 2px solid blueviolet;
+}
+	
+#twitter:hover, #twitter:focus {
+	background: #e1e1e1;
+    border: 2px solid blueviolet;
+}
+#linkedin:hover, #linkedin:focus {
+	background: #e1e1e1;
+    border: 2px solid blueviolet;
+}
+#pinterest:hover, #pinterest:focus {
+	background: #e1e1e1;
+    border: 2px solid blueviolet;
+}
+#email:hover, #email:focus {
+	background: #e1e1e1;
+    border: 2px solid blueviolet;
+}
 </style>
