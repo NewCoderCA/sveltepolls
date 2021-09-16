@@ -63,8 +63,8 @@ const handleInput = (e) => {
 	<p>Thank you {username} for taking part!</p>
 	<p>Please share</p>
 	<!-- Share via Social Media -->
-    <a href="https://www.facebook.com/sharer/sharer.php?u=example.org" target="_blank" id="facebook-url">
-    	<img src="./images/facebook.jpg" alt="Facebook logo" id="facebook" />
+    <a href="https://www.facebook.com/sharer/sharer.php?u=example.org" target="_blank">
+    	<img src="./images/facebook.png" alt="Facebook logo" id="facebook" />
     </a>
 	<a href="http://twitter.com/share?url=http://www.example.com&text=Simple Share Buttons&hashtags=simplesharebuttons" target="_blank">
 		<img src="./images/twitter.png" alt="Twitter logo" id="twitter" />
@@ -78,7 +78,10 @@ const handleInput = (e) => {
     <a href="mailto:?Subject=Simple Share Buttons&Body=I%20saw%20this%20and%20thought%20of%20you!%20 http://www.example.com">
 		<img src="./images/email.png" alt="Email logo" id="email" />
 	</a>
-
+	<a href="https://instagram.com/" target="_blank">
+		<img src="./images/instagram.jpeg" alt="Instagram logo" id="instagram" />
+	</a>
+	
    
 </main>
 <Footer />
@@ -117,12 +120,11 @@ input[type="text"] {
 	margin: 20px auto;
 }
 
-#facebook, #twitter, #linkedin, #pinterest, #email {
+#facebook, #twitter, #linkedin, #pinterest, #email, #instagram {
 	max-width: 50px;
 	max-height: 50px;
 	border-radius: 10px;
 	margin:10px;
-	border: 1px solid rgb(190, 188, 188);
 }
 	
 #facebook:hover, #facebook:focus {
@@ -143,6 +145,10 @@ input[type="text"] {
     border: 2px solid blueviolet;
 }
 #email:hover, #email:focus {
+	background: #e1e1e1;
+    border: 2px solid blueviolet;
+}
+#instagram:hover, #instagram:focus {
 	background: #e1e1e1;
     border: 2px solid blueviolet;
 }

@@ -2070,7 +2070,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (50:4) {#each numbers as num, i}
+    // (53:4) {#each numbers as num, i}
     function create_each_block_1(ctx) {
     	let li;
     	let span;
@@ -2084,10 +2084,10 @@ var app = (function () {
     			span = element("span");
     			t0 = text(t0_value);
     			t1 = space();
-    			add_location(span, file$a, 51, 8, 1223);
-    			attr_dev(li, "class", "num svelte-v0nufs");
+    			add_location(span, file$a, 54, 8, 1226);
+    			attr_dev(li, "class", "num svelte-15k6tmi");
     			set_style(li, "transform", "translateY(-" + /*$secondH*/ ctx[0] + "px");
-    			add_location(li, file$a, 50, 4, 1153);
+    			add_location(li, file$a, 53, 4, 1156);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -2109,14 +2109,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(50:4) {#each numbers as num, i}",
+    		source: "(53:4) {#each numbers as num, i}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (58:8) {#each numbers as num, i}
+    // (61:8) {#each numbers as num, i}
     function create_each_block$2(ctx) {
     	let li;
     	let span;
@@ -2130,10 +2130,10 @@ var app = (function () {
     			span = element("span");
     			t0 = text(t0_value);
     			t1 = space();
-    			add_location(span, file$a, 59, 12, 1401);
-    			attr_dev(li, "class", "num svelte-v0nufs");
+    			add_location(span, file$a, 62, 12, 1404);
+    			attr_dev(li, "class", "num svelte-15k6tmi");
     			set_style(li, "transform", "translateY(-" + /*$secondL*/ ctx[1] + "px)");
-    			add_location(li, file$a, 58, 8, 1326);
+    			add_location(li, file$a, 61, 8, 1329);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -2155,7 +2155,7 @@ var app = (function () {
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(58:8) {#each numbers as num, i}",
+    		source: "(61:8) {#each numbers as num, i}",
     		ctx
     	});
 
@@ -2199,12 +2199,12 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(ul0, "class", "svelte-v0nufs");
-    			add_location(ul0, file$a, 48, 4, 1114);
-    			attr_dev(ul1, "class", "svelte-v0nufs");
-    			add_location(ul1, file$a, 56, 4, 1279);
+    			attr_dev(ul0, "class", "svelte-15k6tmi");
+    			add_location(ul0, file$a, 51, 4, 1117);
+    			attr_dev(ul1, "class", "svelte-15k6tmi");
+    			add_location(ul1, file$a, 59, 4, 1282);
     			attr_dev(div, "class", "timer");
-    			add_location(div, file$a, 47, 0, 1090);
+    			add_location(div, file$a, 50, 0, 1093);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2531,7 +2531,7 @@ var app = (function () {
     			add_location(input, file$9, 33, 4, 759);
     			attr_dev(button, "id", "button");
     			attr_dev(button, "class", "svelte-1xisfg1");
-    			add_location(button, file$9, 34, 4, 823);
+    			add_location(button, file$9, 35, 4, 830);
     			attr_dev(div1, "class", "flag-country-label");
     			add_location(div1, file$9, 31, 2, 668);
     			attr_dev(div2, "class", "card svelte-1xisfg1");
@@ -4576,6 +4576,10 @@ var app = (function () {
     	let img4;
     	let img4_src_value;
     	let t26;
+    	let a5;
+    	let img5;
+    	let img5_src_value;
+    	let t27;
     	let footer;
     	let current;
     	let mounted;
@@ -4662,55 +4666,65 @@ var app = (function () {
     			a4 = element("a");
     			img4 = element("img");
     			t26 = space();
+    			a5 = element("a");
+    			img5 = element("img");
+    			t27 = space();
     			create_component(footer.$$.fragment);
-    			attr_dev(h1, "class", "svelte-vho3v");
+    			attr_dev(h1, "class", "svelte-tb389s");
     			add_location(h1, file, 42, 1, 1118);
     			add_location(div, file, 44, 1, 1181);
     			attr_dev(input, "type", "text");
-    			attr_dev(input, "class", "svelte-vho3v");
+    			attr_dev(input, "class", "svelte-tb389s");
     			add_location(input, file, 49, 1, 1481);
     			add_location(p0, file, 62, 1, 1771);
     			add_location(p1, file, 63, 1, 1817);
-    			if (!src_url_equal(img0.src, img0_src_value = "./images/facebook.jpg")) attr_dev(img0, "src", img0_src_value);
+    			if (!src_url_equal(img0.src, img0_src_value = "./images/facebook.png")) attr_dev(img0, "src", img0_src_value);
     			attr_dev(img0, "alt", "Facebook logo");
     			attr_dev(img0, "id", "facebook");
-    			attr_dev(img0, "class", "svelte-vho3v");
-    			add_location(img0, file, 66, 5, 1981);
+    			attr_dev(img0, "class", "svelte-tb389s");
+    			add_location(img0, file, 66, 5, 1963);
     			attr_dev(a0, "href", "https://www.facebook.com/sharer/sharer.php?u=example.org");
     			attr_dev(a0, "target", "_blank");
-    			attr_dev(a0, "id", "facebook-url");
     			add_location(a0, file, 65, 4, 1874);
     			if (!src_url_equal(img1.src, img1_src_value = "./images/twitter.png")) attr_dev(img1, "src", img1_src_value);
     			attr_dev(img1, "alt", "Twitter logo");
     			attr_dev(img1, "id", "twitter");
-    			attr_dev(img1, "class", "svelte-vho3v");
-    			add_location(img1, file, 69, 2, 2196);
+    			attr_dev(img1, "class", "svelte-tb389s");
+    			add_location(img1, file, 69, 2, 2178);
     			attr_dev(a1, "href", "http://twitter.com/share?url=http://www.example.com&text=Simple Share Buttons&hashtags=simplesharebuttons");
     			attr_dev(a1, "target", "_blank");
-    			add_location(a1, file, 68, 1, 2061);
+    			add_location(a1, file, 68, 1, 2043);
     			if (!src_url_equal(img2.src, img2_src_value = "./images/linkedin.jpeg")) attr_dev(img2, "src", img2_src_value);
     			attr_dev(img2, "alt", "LinkedIn logo");
     			attr_dev(img2, "id", "linkedin");
-    			attr_dev(img2, "class", "svelte-vho3v");
-    			add_location(img2, file, 72, 2, 2371);
+    			attr_dev(img2, "class", "svelte-tb389s");
+    			add_location(img2, file, 72, 2, 2353);
     			attr_dev(a2, "href", "https://www.linkedin.com/sharing/share-offsite/?url=https://example.com");
     			attr_dev(a2, "target", "_blank");
-    			add_location(a2, file, 71, 1, 2270);
+    			add_location(a2, file, 71, 1, 2252);
     			if (!src_url_equal(img3.src, img3_src_value = "./images/pinterest.png")) attr_dev(img3, "src", img3_src_value);
     			attr_dev(img3, "alt", "Pinterest logo");
     			attr_dev(img3, "id", "pinterest");
-    			attr_dev(img3, "class", "svelte-vho3v");
-    			add_location(img3, file, 75, 2, 2740);
+    			attr_dev(img3, "class", "svelte-tb389s");
+    			add_location(img3, file, 75, 2, 2722);
     			attr_dev(a3, "href", "javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());");
-    			add_location(a3, file, 74, 1, 2449);
+    			add_location(a3, file, 74, 1, 2431);
     			if (!src_url_equal(img4.src, img4_src_value = "./images/email.png")) attr_dev(img4, "src", img4_src_value);
     			attr_dev(img4, "alt", "Email logo");
     			attr_dev(img4, "id", "email");
-    			attr_dev(img4, "class", "svelte-vho3v");
-    			add_location(img4, file, 78, 2, 2947);
+    			attr_dev(img4, "class", "svelte-tb389s");
+    			add_location(img4, file, 78, 2, 2929);
     			attr_dev(a4, "href", "mailto:?Subject=Simple Share Buttons&Body=I%20saw%20this%20and%20thought%20of%20you!%20 http://www.example.com");
-    			add_location(a4, file, 77, 4, 2823);
-    			attr_dev(main, "class", "svelte-vho3v");
+    			add_location(a4, file, 77, 4, 2805);
+    			if (!src_url_equal(img5.src, img5_src_value = "./images/instagram.jpeg")) attr_dev(img5, "src", img5_src_value);
+    			attr_dev(img5, "alt", "Instagram logo");
+    			attr_dev(img5, "id", "instagram");
+    			attr_dev(img5, "class", "svelte-tb389s");
+    			add_location(img5, file, 81, 2, 3049);
+    			attr_dev(a5, "href", "https://instagram.com/");
+    			attr_dev(a5, "target", "_blank");
+    			add_location(a5, file, 80, 1, 2997);
+    			attr_dev(main, "class", "svelte-tb389s");
     			add_location(main, file, 41, 0, 1110);
     		},
     		l: function claim(nodes) {
@@ -4769,7 +4783,10 @@ var app = (function () {
     			append_dev(main, t25);
     			append_dev(main, a4);
     			append_dev(a4, img4);
-    			insert_dev(target, t26, anchor);
+    			append_dev(main, t26);
+    			append_dev(main, a5);
+    			append_dev(a5, img5);
+    			insert_dev(target, t27, anchor);
     			mount_component(footer, target, anchor);
     			current = true;
 
@@ -4867,7 +4884,7 @@ var app = (function () {
 
     			destroy_component(flag);
     			destroy_component(countdown);
-    			if (detaching) detach_dev(t26);
+    			if (detaching) detach_dev(t27);
     			destroy_component(footer, detaching);
     			mounted = false;
     			run_all(dispose);

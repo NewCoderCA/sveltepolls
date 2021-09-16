@@ -2,8 +2,8 @@
 import { fly } from 'svelte/transition';
 import Countdown from '../components/Countdown.svelte';
 let done = false;
-//User form
 
+//User form
 const formValues = {
   flagName: ''
 }
@@ -32,8 +32,10 @@ function submitFlag() {
   <div class="flag-country-label">
     <label for="flag-country">Country of flag</label>
     <input id="flag-country" bind:value={formValues.flagName}/>
+      
     <button id="button">Submit</button>
   </div>
+  
   
 </div> 
 </form>

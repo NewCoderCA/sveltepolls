@@ -43,7 +43,10 @@ $: {
         dispatch('completed');
     }
 }
+
 </script>
+
+
 
 <div class="timer">
     <ul>
@@ -64,8 +67,8 @@ $: {
 
 </div>
 
-<style>
 
+<style>
 ul {
     display: inline-block;
     list-style: none;
@@ -78,5 +81,11 @@ ul {
     font-size: 30px;
     font-weight: bold;
     color: blueviolet;
+}
+button {
+    margin: 15px auto;
+    padding: 10px;
+    border-radius: 8px;
+    border-color: blueviolet;;
 }
 </style>
