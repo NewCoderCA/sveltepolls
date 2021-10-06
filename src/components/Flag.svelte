@@ -1,6 +1,6 @@
 <script>
-import { fly } from 'svelte/transition';
-import Countdown from '../components/Countdown.svelte';
+ //import { fly } from 'svelte/transition';
+ //import Countdown from '../components/Countdown.svelte';
 let done = false;
 
 //User form
@@ -19,13 +19,13 @@ function submitFlag() {
 <div class="card">
   <h2>Which country has this flag?</h2>
 
-  <div class="timer">
+  <!-- <div class="timer">
     <h3>Start</h3>
     <Countdown countdown={9} on:completed="{() => done = true}" />
     {#if done}
     <p in:fly>Times up!</p>
     {/if}
-  </div>
+  </div> -->
 
   <img src="./images/flagGhana.jpg" alt="Flag of Ghana" class="flag" >
 

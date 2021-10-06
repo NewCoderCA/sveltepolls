@@ -8,7 +8,6 @@ import Footer from './components/Footer.svelte';
 import PollList from './components/PollList.svelte';
 import CreatePollForm from './components/CreatePollForm.svelte';
 import Tabs from './shared/Tabs.svelte';
-import Countdown from './components/Countdown.svelte'
 import Timer from './components/Timer.svelte';
 
 
@@ -58,7 +57,6 @@ const handleInput = (e) => {
 	{/if}
 
 	<Flag />
-	<Countdown />
 
 	<p>Thank you {username} for taking part!</p>
 	<p>Please share</p>

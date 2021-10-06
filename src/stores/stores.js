@@ -9,3 +9,4 @@ export const time = readable(new Date(), set => {
         clearInterval(interval)
     }
 })
+
