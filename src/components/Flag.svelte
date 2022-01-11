@@ -1,6 +1,8 @@
 <script>
  //import { fly } from 'svelte/transition';
  //import Countdown from '../components/Countdown.svelte';
+
+ import { flagcheck } from '../stores/flagmatch.js';
 let done = false;
 
 //User form
@@ -11,7 +13,11 @@ const formValues = {
 //Submitting User form information. Usually would be sent to an API Endpoint
 function submitFlag() {
   console.log(formValues);
+  flagcheck();
 }
+
+
+  
 
 </script>
 
@@ -36,6 +42,16 @@ function submitFlag() {
     <button id="button">Submit</button>
   </div>
   
+
+  <!-- Traversing flags  -->
+<!-- Object.entries() converts an Object into an array of arrays, 
+ each sub array first index is the a key and the second index is a value
+ Object.entries({key: value, key:value}) => [[key, value], [key,value]] -->
+
+<!-- {#each Object.entries(sections) as [flag1, ghana]}
+  <p>{flag1}</p>
+  <p>{ghana}</p>
+{/each} -->
   
 </div> 
 </form>
