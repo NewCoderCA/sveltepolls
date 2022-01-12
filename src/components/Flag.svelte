@@ -1,8 +1,6 @@
 <script>
- //import { fly } from 'svelte/transition';
- //import Countdown from '../components/Countdown.svelte';
 
- import { flagcheck } from '../stores/flagmatch.js';
+import { flagcheck } from '../stores/flagmatch.js';
 let done = false;
 
 //User form
@@ -10,11 +8,20 @@ const formValues = {
   flagName: ''
 }
 
+
 //Submitting User form information. Usually would be sent to an API Endpoint
+let answer = ''
+
 function submitFlag() {
-  console.log(formValues);
-  flagcheck();
+
+ const isCorrect = flagcheck(formValues['flagName']);
+ if (isCorrect) {
+   answer = 'Correct';
+ } else {
+   answer = "Wrong";
+ }
 }
+
 
 
   
@@ -24,14 +31,7 @@ function submitFlag() {
 <form on:submit|preventDefault={submitFlag}>
 <div class="card">
   <h2>Which country has this flag?</h2>
-
-  <!-- <div class="timer">
-    <h3>Start</h3>
-    <Countdown countdown={9} on:completed="{() => done = true}" />
-    {#if done}
-    <p in:fly>Times up!</p>
-    {/if}
-  </div> -->
+  <h3>Is this right? {answer}</h3>
 
   <img src="./images/flagGhana.jpg" alt="Flag of Ghana" class="flag" >
 
@@ -42,16 +42,6 @@ function submitFlag() {
     <button id="button">Submit</button>
   </div>
   
-
-  <!-- Traversing flags  -->
-<!-- Object.entries() converts an Object into an array of arrays, 
- each sub array first index is the a key and the second index is a value
- Object.entries({key: value, key:value}) => [[key, value], [key,value]] -->
-
-<!-- {#each Object.entries(sections) as [flag1, ghana]}
-  <p>{flag1}</p>
-  <p>{ghana}</p>
-{/each} -->
   
 </div> 
 </form>
